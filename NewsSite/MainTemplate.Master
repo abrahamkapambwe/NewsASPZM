@@ -397,7 +397,7 @@
                             <div class="space">
                             </div>
                             <div class="side-bar-story">
-                                <span class="head-story">Most Popular on newske</span><br />
+                                <span class="head-story">Most Popular on newszm</span><br />
                                 <div class="space">
                                 </div>
                                 <div style="background-color: bisque; padding: 5px">
@@ -526,7 +526,7 @@
                                 Text="Terms of Use"></asp:HyperLink></li>
                         <li>
                             <asp:HyperLink runat="server" ID="HyperLink2" NavigateUrl="~/Views/AboutUs.aspx"
-                                Text="About newske"></asp:HyperLink></li>
+                                Text="About newszm"></asp:HyperLink></li>
                         <li>
                             <asp:HyperLink runat="server" ID="HyperLink3" NavigateUrl="~/Views/Adversite.aspx"
                                 Text="Advertise"></asp:HyperLink></li>
