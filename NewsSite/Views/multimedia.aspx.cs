@@ -61,8 +61,18 @@ namespace NewsSite.Views
                 lstEntertainmentHeadlines.DataSource = newsentertainment.Skip(4).Take(10);
                 lstEntertainmentHeadlines.DataBind();
                 var comedy = GetNewsFromAmazon.GetVideosFromCache(Settings.Default.ZambiaVideo).Where(t => t.Category == Categories.COMEDY).ToList();
-                lstComedy.DataSource = comedy;
+                lstComedy.DataSource = comedy.Take(4);
                 lstComedy.DataBind();
+
+                lstCommedyHeadlines.DataSource = comedy.Skip(4).Take(10);
+                lstCommedyHeadlines.DataBind();
+
+
+                var tourism = GetNewsFromAmazon.GetVideosFromCache(Settings.Default.ZambiaVideo).Where(t => t.Category == Categories.TOURISM).ToList();
+                lsttourism.DataSource = tourism.Take(4);
+                lsttourism.DataBind();
+                lsttourismHeadlines.DataSource = tourism.Skip(4).Take(10);
+                lsttourismHeadlines.DataBind();
             }
 
         }
@@ -82,22 +92,19 @@ namespace NewsSite.Views
 
             }
         }
-        protected void lsttourism_itemDatabound(object sender, ListViewItemEventArgs e)
+        protected void lstCommedyHeadlines_itemDatabound(object sender, ListViewItemEventArgs e)
         {
             if (e.Item.ItemType == ListViewItemType.DataItem)
             {
-
                 Multimedia newsComponents = (Multimedia)e.Item.DataItem;
-                Image img = (Image)e.Item.FindControl("imgPhoto");
-                HtmlAnchor htmlAnchor = (HtmlAnchor)e.Item.FindControl("hyperThumbNail");
+
                 HyperLink lnk = (HyperLink)e.Item.FindControl("hyperNavi");
                 lnk.NavigateUrl = "~/Views/multimediaItem.aspx?VideoId=" + newsComponents.VideoId;
-                htmlAnchor.HRef = "~/Views/multimediaItem.aspx?VideoId=" + newsComponents.VideoId;
-                HyperLink linksummary = (HyperLink)e.Item.FindControl("linksummary");
-                linksummary.NavigateUrl = "~/Views/multimediaItem.aspx?VideoId=" + newsComponents.VideoId;
+
 
             }
         }
+       
         protected void lstPolitics_itemDatabound(object sender, ListViewItemEventArgs e)
         {
             if (e.Item.ItemType == ListViewItemType.DataItem)
@@ -123,6 +130,22 @@ namespace NewsSite.Views
                 HyperLink lnk = (HyperLink)e.Item.FindControl("hyperNavi");
                 lnk.NavigateUrl = "~/Views/multimediaItem.aspx?VideoId=" + newsComponents.VideoId;
 
+
+            }
+        }
+        protected void lsttourism_itemDatabound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+
+                Multimedia newsComponents = (Multimedia)e.Item.DataItem;
+                Image img = (Image)e.Item.FindControl("imgPhoto");
+                HtmlAnchor htmlAnchor = (HtmlAnchor)e.Item.FindControl("hyperThumbNail");
+                HyperLink lnk = (HyperLink)e.Item.FindControl("hyperNavi");
+                lnk.NavigateUrl = "~/Views/multimediaItem.aspx?VideoId=" + newsComponents.VideoId;
+                htmlAnchor.HRef = "~/Views/multimediaItem.aspx?VideoId=" + newsComponents.VideoId;
+                HyperLink linksummary = (HyperLink)e.Item.FindControl("linksummary");
+                linksummary.NavigateUrl = "~/Views/multimediaItem.aspx?VideoId=" + newsComponents.VideoId;
 
             }
         }
