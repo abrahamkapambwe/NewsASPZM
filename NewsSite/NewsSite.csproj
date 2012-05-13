@@ -237,6 +237,7 @@
     <Content Include="images\whitedot.png" />
     <Content Include="images\whoonga.jpg" />
     <Content Include="images\youtube.jpg" />
+    <Content Include="images\zambia-logo-white.png" />
     <Content Include="images\zambia.png" />
     <Content Include="Scripts\amplify-vsdoc.js" />
     <Content Include="Scripts\amplify.js" />

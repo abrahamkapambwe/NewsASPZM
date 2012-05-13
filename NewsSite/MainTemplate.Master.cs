@@ -36,9 +36,9 @@ namespace NewsSite
         {
             if (!IsPostBack)
             {
-                //LoadInTheCache();
-                //lstProperties.DataSource = ListPropertyTableAzures.OrderByDescending(s => s.Added).Take(5);
-                //lstProperties.DataBind();
+                LoadInTheCache();
+                lstProperties.DataSource = ListPropertyTableAzures.OrderByDescending(s => s.Added).Take(5);
+                lstProperties.DataBind();
                 var multimedia =
                         GetNewsFromAmazon.GetVideosFromCache(Settings.Default.ZambiaVideo).Where(p => p.Category == Categories.POLITICS).Take(1);
                 if (multimedia != null)
@@ -174,7 +174,7 @@ namespace NewsSite
                     //link.Target = "_blank";
                     //link.NavigateUrl = Settings.Default.PropertyUrlKA + "Public/PropertyDetails.aspx?PropertyID=" + property.PropertyID;
                 }
-                price.Text = "K" + property.Price;
+                price.Text = "K " + property.Price;
                 street.Text = property.StreetName;
                 suburb.Text = property.Suburb;
                 city.Text = property.City;
@@ -200,7 +200,7 @@ namespace NewsSite
         {
             ListPropertyTableAzures = new List<PropertyTableAzure>();
             HttpWebRequest webRequest =
-                (HttpWebRequest)WebRequest.Create(Settings.Default.PropertySiteke);
+                (HttpWebRequest)WebRequest.Create(Settings.Default.PropertySitezm);
             HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse();
             Stream stream = webResponse.GetResponseStream();
             StreamReader streamRead = new StreamReader(stream);

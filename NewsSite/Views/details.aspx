@@ -35,15 +35,15 @@
         <div>
             <asp:ListView runat="server" ID="lstRelatedNews" OnItemDataBound="lstRelatedNews_itemDatabound">
                 <LayoutTemplate>
-                    <ul runat="server" id="itemPlaceholder" style="list-style-type: none">
-                    </ul>
+                    <li runat="server" id="itemPlaceholder" style="list-style-type: none">
+                    </li>
                 </LayoutTemplate>
                 <ItemTemplate>
-                    <li>
+                    <ul>
                         <div>
                             <asp:HyperLink runat="server" ID="hypeRelated"><%#Eval("NewsHeadline")%></asp:HyperLink>
                         </div>
-                    </li>
+                    </ul>
                 </ItemTemplate>
             </asp:ListView>
         </div>

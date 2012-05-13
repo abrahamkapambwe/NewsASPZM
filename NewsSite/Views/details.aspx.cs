@@ -24,8 +24,11 @@ namespace NewsSite.Views
                     var comments = GetNewsFromAmazon.GetCommentsFromCache(Settings.Default.DomainNameComment).Where(n => n.NewsID == Convert.ToString(newsid));
                     lstComments.DataSource = comments;
                     lstComments.DataBind();
-                    lstRelatedNews.DataSource = GetNewsFromAmazon.GetNewsFromCache().Where(p => p.Tag.Contains(news.Tag)).Take(5);
-                    lstRelatedNews.DataBind();
+                    if (news != null)
+                    {
+                        lstRelatedNews.DataSource = GetNewsFromAmazon.GetNewsFromCache().Where(p => p.Tag.Contains(news.Tag)).Take(5);
+                        lstRelatedNews.DataBind();
+                    }
                     divNewsItem.InnerHtml = Server.HtmlDecode(news.NewsItem);
                     lblHeadline.Text = news.NewsHeadline;
                     hdfNewsID.Value = Convert.ToString(news.NewsID);

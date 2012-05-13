@@ -35,7 +35,7 @@ namespace NewsSite
         {
             if (!IsPostBack)
             {
-             // LoadInTheCache();
+                LoadInTheCache();
                 var news = GetNewsFromAmazon.GetNewsFromCache();
                 if (news != null && news.Any())
                 {
@@ -95,7 +95,7 @@ namespace NewsSite
                     //link.Target = "_blank";
                     //link.NavigateUrl = Settings.Default.PropertyUrlKA + "Public/PropertyDetails.aspx?PropertyID=" + property.PropertyID;
                 }
-                price.Text = "KSh " + property.Price;
+                price.Text = "K " + property.Price;
                 street.Text = property.StreetName;
                 suburb.Text = property.Suburb;
                 city.Text = property.City;
@@ -107,7 +107,7 @@ namespace NewsSite
         {
             ListPropertyTableAzures = new List<PropertyTableAzure>();
             HttpWebRequest webRequest =
-                (HttpWebRequest)WebRequest.Create(Settings.Default.PropertySiteke);
+                (HttpWebRequest)WebRequest.Create(Settings.Default.PropertySitezm);
             HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse();
             Stream stream = webResponse.GetResponseStream();
             StreamReader streamRead = new StreamReader(stream);
