@@ -25,7 +25,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
 
-</script>
+    </script>
 </head>
 <body class="main-body">
     <form id="form1" runat="server">
@@ -39,11 +39,11 @@
                         <asp:HyperLink ID="home" NavigateUrl="~/Views/homepage.aspx" Target="_parent" runat="server">HOME</asp:HyperLink>
                     </div>
                     <div>
-                        <asp:HyperLink ID="politics" NavigateUrl="~/Views/othernews.aspx?category=POLITICS"
+                        <asp:HyperLink ID="politics" NavigateUrl="~/Views/othernews.aspx?category=Politics"
                             Target="_parent" runat="server">POLITICS</asp:HyperLink>
                     </div>
                     <div>
-                        <asp:HyperLink ID="business" NavigateUrl="~/Views/othernews.aspx?category=BUSINESS"
+                        <asp:HyperLink ID="business" NavigateUrl="~/Views/othernews.aspx?category=Business"
                             Target="_parent" runat="server">BUSINESS</asp:HyperLink>
                     </div>
                     <div>
@@ -88,8 +88,8 @@
                             </div>
                             <div class="space-small">
                             </div>
-                            <img src="../images/zambia-logo-white.png" width="70px" height="60px" title="News times" alt="Logo Image"
-                                border="0px" />
+                            <img src="../images/zambia-logo-white.png" width="70px" height="60px" title="News times"
+                                alt="Logo Image" border="0px" />
                             <div class="space-small">
                             </div>
                             <div class="space-small">
@@ -219,8 +219,8 @@
                         ID="hrheadline" runat="server"></asp:HyperLink></span>
                 </div>--%>
                 <div class="right">
-                    <span>&nbsp;&nbsp;<a href="http://www.facebook.com/pages/Newszm/235692303198586"><img src="../images/facebook.jpg" 
-                        alt="Facebook" border="0px" /></a>&nbsp;&nbsp;<a href="https://twitter.com/#!/newszm1"><img
+                    <span>&nbsp;&nbsp;<a href="http://www.facebook.com/pages/Newszm/235692303198586"><img
+                        src="../images/facebook.jpg" alt="Facebook" border="0px" /></a>&nbsp;&nbsp;<a href="https://twitter.com/#!/newszm1"><img
                             src="../images/twitter.jpg" alt="Twitter" border="0px" /></a></span><span class="share">SHARE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 </div>
             </div>
@@ -284,6 +284,15 @@
                                     </li>
                                 </ItemTemplate>
                             </asp:ListView>
+                        </div>
+                        <div style="clear: both">
+                        </div>
+                        <div class="propertybanner">
+                            <div style="padding-top: 10px">
+                                <a target="_blank" href="http://epropertysearchzm.apphb.com">
+                                    <img src="../images/eproperty1.png" alt="property" width="230px" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -366,7 +375,6 @@
             </div>
         </div>
     </div>
-   
     </form>
 </body>
 </html>
